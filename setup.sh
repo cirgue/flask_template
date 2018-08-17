@@ -19,6 +19,7 @@ python generate_config_files.py $SITE_NAME
 
 #Configure postgres db
 sudo -u postgres createuser john
+python flask_template/db_setup.py
 
 #Test that the flask app is working correctly
 # sudo ufw allow 5000

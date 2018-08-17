@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
     user = dbi.grab_a_user()
-    print('user: %s'user['name'])
+    print('user: %s'%user['name'])
     return render_template('homepage.html', user=user)
 
 if __name__ == "__main__":
