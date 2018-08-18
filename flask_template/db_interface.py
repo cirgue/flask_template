@@ -1,6 +1,8 @@
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 import config as cfg
+import os
+
 
 def dlog(string):
     delim = ' | '
@@ -13,7 +15,8 @@ def clean(t):
     return t.encode('ascii', 'ignore').decode()
 
 def get_sql(filename):
-    with open('sql/'+filename) as infile:
+
+    with open(os.getcwd+'/sql/'+filename) as infile:
         return infile.read()
 
 def get_dev_data(filename):
