@@ -117,6 +117,7 @@ def add_user(name):
     %s
     RETURNING uid;
     '''%name
+    return ex_query(add_statement)
 
 def grab_a_user():
     query = '''
