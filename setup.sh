@@ -28,9 +28,12 @@ python flask_template/db_setup.py
 source setup_nginx.sh
 source setup_systemd.sh
 
+systemctl daemon-reload
+
 sudo certbot --nginx -d $SITE_NAME
 sudo certbot renew --dry-run
 
+systemctl daemon-reload
 
 
 
