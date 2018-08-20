@@ -112,9 +112,9 @@ def add_user(name):
     INSERT INTO users
     (uid,
     name)
-    VALUES
+    VALUES(
     DEFAULT,
-    %s
+    '%s')
     RETURNING uid;
     '''%name
     return ex_query(add_statement)
@@ -127,7 +127,7 @@ def grab_a_user():
 
     user = ex_query(query, asdict=True)
     print('got user from db')
-    return user
+    return user[0]
 
 
 
