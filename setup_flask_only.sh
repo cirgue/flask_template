@@ -19,7 +19,7 @@ pip install -r requirements.txt
 
 #Configure postgres db
 sudo -u postgres createuser -s john
-python flask_template/db_setup.py
+python db_setup.py
 
 python flask_app.py
 
