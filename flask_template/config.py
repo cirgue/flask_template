@@ -11,4 +11,3 @@ upload_directory = 'static/images/'
 
 if __name__ == '__main__':
     print(project_directory)
-

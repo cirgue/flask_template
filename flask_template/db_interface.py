@@ -26,13 +26,17 @@ def esc_string(instring):
 
 
 def create_db():
-    con = psycopg2.connect(dbname=cfg.application_db,
+    print('Starting DB Creation')
+    con = psycopg2.connect(dbname='postgres',
           user=cfg.username, host='',
           password=cfg.password)
-
+    print('Connection established')
     con.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
     cur = con.cursor()
+    print('Cursor Established')
     cur.execute("CREATE DATABASE %s  ;" % cfg.application_db)
+    print('Success!')
+
 
 def ex_statement(statement):
     '''
