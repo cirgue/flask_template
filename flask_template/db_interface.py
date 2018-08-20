@@ -123,7 +123,10 @@ def grab_a_user():
     select * from users
     limit 1
     '''
-    return ex_query(query, asdict=True)
+
+    user = ex_query(query, asdict=True)
+    print('got user from db')
+    return user
 
 
 
