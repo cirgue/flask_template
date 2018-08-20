@@ -26,7 +26,7 @@ def esc_string(instring):
 
 
 def create_db():
-    con = psycopg2.connect(dbname='postgres',
+    con = psycopg2.connect(dbname=cfg.application_db,
           user=cfg.username, host='',
           password=cfg.password)
 
