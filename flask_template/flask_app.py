@@ -1,6 +1,6 @@
 
 from flask import Flask, render_template
-import db_interface as dbi
+from flask_template import db_interface as dbi
 app = Flask(__name__)
 
 
