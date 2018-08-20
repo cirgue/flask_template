@@ -1,6 +1,6 @@
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
-import config as cfg
+from flask_template import config as cfg
 
 def dlog(string):
     delim = ' | '
