@@ -4,7 +4,10 @@ import os
 address = 'conttact.me'
 
 nginx_conf_name = 'flask_app_nginx_conf'
-nginx_conf_contents = '''server {{
+nginx_conf_contents = '''
+
+include /etc/nginx/mime.types;
+server {{
     listen 80;
     server_name {address};
 
@@ -12,6 +15,12 @@ nginx_conf_contents = '''server {{
         include proxy_params;
         proxy_pass http://unix:{project_directory}/flask_app.sock;
     }}
+
+    location /static  {{
+
+            alias {project_directory}static;
+
+        }}
 }}'''.format(**{'address':address, 'project_directory':os.getcwd()})
 
 systemd_config_name = 'flask_app.service'

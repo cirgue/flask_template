@@ -1,9 +1,0 @@
-server {
-    listen 80;
-    server_name 159.89.158.59;
-
-    location / {
-        include proxy_params;
-        proxy_pass http://unix:/home/john/do_deploy_tutorial/flask_app.sock;
-    }
-}
