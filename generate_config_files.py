@@ -6,7 +6,6 @@ address = 'conttact.me'
 nginx_conf_name = 'flask_app_nginx_conf'
 nginx_conf_contents = '''
 
-include /etc/nginx/mime.types;
 server {{
     listen 80;
     server_name {address};
