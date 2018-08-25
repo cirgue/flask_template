@@ -15,8 +15,8 @@ server {{
         proxy_pass http://unix:{project_directory}/flask_app.sock;
     }}
 
-    location ^~ {project_directory}/static/ {{
-    alias /static/;
+    location ^~ /static/ {{
+    alias {project_location}/static/;
     }}
 
 
