@@ -15,11 +15,11 @@ server {{
         proxy_pass http://unix:{project_directory}/flask_app.sock;
     }}
 
-    location /static / {{
+    location ^~ {project_directory}/static/ {{
+    alias /static/;
+    }}
 
-            alias {project_directory}/static;
 
-        }}
 }}'''.format(**{'address':address, 'project_directory':os.getcwd()})
 
 systemd_config_name = 'flask_app.service'
