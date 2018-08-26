@@ -16,7 +16,7 @@ server {{
     }}
 
     location ^~ /static/ {{
-    alias {project_location}/static/;
+    alias {project_directory}/static/;
     }}
 
 
