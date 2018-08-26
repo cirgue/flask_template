@@ -31,7 +31,7 @@ After=network.target
 [Service]
 User=john
 Group=www-data
-WorkingDirectory={project_directory}/
+WorkingDirectory={project_directory}/flask_template/
 Environment="PATH={project_directory}/flask_app_env/bin"
 ExecStart={project_directory}/flask_app_env/bin/gunicorn --workers 3 --bind unix:flask_app.sock -m 007 wsgi:app
 
