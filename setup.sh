@@ -28,7 +28,7 @@ python db_setup.py
 source setup_nginx.sh
 source setup_systemd.sh
 
-sudo certbot --nginx -d $SITE_NAME
+sudo certbot --nginx --staging -d $SITE_NAME
 sudo certbot renew --dry-run
 
 systemctl daemon-reload
