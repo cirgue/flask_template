@@ -16,7 +16,7 @@ server {{
     }}
 
     location ^~ /static/ {{
-    alias {project_directory}/flask_template/static/;
+    root {project_directory}/flask_template/static/;
     }}
 
 
