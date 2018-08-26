@@ -17,19 +17,21 @@ pip install -r requirements.txt
 #Set up config files
 python generate_config_files.py $SITE_NAME
 
+ls
+
 #Configure postgres db
 sudo -u postgres createuser -s john
 python db_setup.py
 
 #Test that the flask app is working correctly
-# sudo ufw allow 5000
-# python flask_app.py
+sudo ufw allow 5000
+python flask_app.py
 
 source setup_nginx.sh
 source setup_systemd.sh
 
-sudo certbot --nginx --staging -d $SITE_NAME
-sudo certbot renew --dry-run
+# sudo certbot --nginx --staging -d $SITE_NAME
+# sudo certbot renew --dry-run
 
 systemctl daemon-reload
 
