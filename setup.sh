@@ -1,6 +1,6 @@
 
 #pull site name from command line
-SITE_NAME=conttact.me
+SITE_NAME=$1
 
 #Install dependencies
 sudo add-apt-repository ppa:certbot/certbot -y
