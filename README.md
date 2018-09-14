@@ -10,7 +10,7 @@ Prereqs:
 - A domain name
 - A DNS configured to point the domain name to the DO droplet
 
-#### Note: I just realized that this will not work for others without changing the db_setup.py script on line 13: my username is hardcoded here, you will have to replace this with yours. I will update this tonight to pull the username from the session. 
+#### Note: I just realized that this will not work for others without changing the db_setup.py and generate_config_files.py: my username is hardcoded in both locations, you will have to replace this with yours. I will update this tonight to pull the username from the shell session. 
 
 SSH into the digital ocean server and run the following:
 
