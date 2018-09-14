@@ -5,6 +5,11 @@ This code is adapted from this [Digital Ocean tutorial](https://www.digitalocean
 
 
 ### Quickstart
+Prereqs:
+- A ditalocean (or similar) droplet running some variation of Linux (I used ubuntu, but this will probably work on other distros)
+- A domain name
+- A DNS configured to point the domain name to the DO droplet
+
 SSH into the digital ocean server and run the following:
 
 ```
