@@ -11,7 +11,7 @@ SSH into the digital ocean server and run the following:
 adduser [USERNAME]
 adduser [USERNAME] sudo
 cd
-git clone https://github.com/cirgue/do_deploy_tutorial.git
+git clone https://github.com/cirgue/flask_template.git
 source setup.sh [domain name]
 ```
 
