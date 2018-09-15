@@ -40,7 +40,7 @@ ExecStart={project_directory}/flask_app_env/bin/gunicorn --workers 3 --bind unix
 
 [Install]
 WantedBy=multi-user.target
-'''.format(**{'project_directory':os.getcwd(), 'username'=getpass.getuser()})
+'''.format(**{'project_directory':os.getcwd(), 'username':getpass.getuser()})
 
 def write_config_files():
     print('writing nginx')
