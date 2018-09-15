@@ -5,7 +5,7 @@ This code is adapted from this [Digital Ocean tutorial](https://www.digitalocean
 
 
 
-### Quickstart
+## Quickstart
 Prereqs:
 - A ditalocean (or similar) droplet running some variation of Linux (I used ubuntu 16.04 64 bit, but this will probably work on other distros)
 - A domain name
@@ -26,8 +26,15 @@ source setup.sh [domain name]
 After installation, you should be able to go to `http://[domain name]` in a browser and see the homepage. Currently, certbot is set up to only get a staging cert, which the browser shouldn't trust by default.
 
 
+## FAQ
 
-### To reset ssh keys on local:
+#### Why do this bare-metal instead of docker?
+You probably don't actually need it for most demo web apps or for low-to-medium traffic sites.
+
+#### Why not use a pre-baked deployment infrastructure/ static site generator/ some other service?
+This is primairly aimed at people that want to learn to set up the deployment infrastructure for themselves. I'm sure that you could use this to productionalize something, but you're probably better off using this as an aid to the above tutorials
+
+## To reset ssh keys on local:
 
 `ssh-keygen -R [SERVER IP]`
 
