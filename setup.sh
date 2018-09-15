@@ -18,7 +18,7 @@ pip install -r requirements.txt
 python generate_config_files.py $SITE_NAME
 
 #Configure postgres db
-sudo -u postgres createuser -s john
+sudo -u postgres createuser -s $USER
 python db_setup.py
 
 #Test that the flask app is working correctly
