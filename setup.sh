@@ -22,8 +22,8 @@ sudo -u postgres createuser -s $USER
 python db_setup.py
 
 #Test that the flask app is working correctly
-sudo ufw allow 5000
-python flask_app.py
+# sudo ufw allow 5000
+# python flask_template/flask_app.py
 
 source setup_nginx.sh
 source setup_systemd.sh
