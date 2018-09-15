@@ -21,7 +21,7 @@ pip install -r requirements.txt
 sudo -u postgres createuser -s john
 python db_setup.py
 
-python flask_app.py
+python flask_template/flask_app.py
 
 #Test that the flask app is working correctly
 # sudo ufw allow 5000

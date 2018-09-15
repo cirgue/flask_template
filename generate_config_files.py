@@ -3,9 +3,15 @@ import os
 import getpass
 
 address = sys.argv[1]
-# address = 'conttact.me'
 
 nginx_conf_name = 'flask_app_nginx_conf'
+
+
+'''
+In the string below, we're setting up the Nginx config. Note that we have to specify the location
+of the 'static' directory in line 26:27 so that resources like bootstrap or any JS will be loaded
+correctly.
+'''
 nginx_conf_contents = '''
 
 server {{
@@ -23,6 +29,7 @@ server {{
 
 
 }}'''.format(**{'address':address, 'project_directory':os.getcwd()})
+
 
 systemd_config_name = 'flask_app.service'
 systemd_config_contents = '''
