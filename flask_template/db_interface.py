@@ -25,6 +25,9 @@ def create_db():
     cur.execute("CREATE DATABASE %s  ;" % cfg.application_db)
 
 
+def get_sql(filename):
+    with open(cfg.project_directory+'/sql/'+filename) as infile:
+        return infile.read()
 
 def ex_statement(statement):
     '''
