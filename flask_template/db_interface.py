@@ -12,30 +12,18 @@ def dlog(string):
 def clean(t):
     return t.encode('ascii', 'ignore').decode()
 
-def get_sql(filename):
-
-    with open(cfg.project_directory+'/sql/'+filename) as infile:
-        return infile.read()
-
-def get_dev_data(filename):
-    with open('dev_data/'+filename) as infile:
-        return infile.read()
 
 def esc_string(instring):
     return "%s%s%s"%(cfg.escape_token, instring,cfg.escape_token)
 
-
 def create_db():
-    print('Starting DB Creation')
     con = psycopg2.connect(dbname='postgres',
           user=cfg.username, host='',
           password=cfg.password)
-    print('Connection established')
     con.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
     cur = con.cursor()
-    print('Cursor Established')
     cur.execute("CREATE DATABASE %s  ;" % cfg.application_db)
-    print('Success!')
+
 
 
 def ex_statement(statement):

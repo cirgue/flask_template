@@ -4,13 +4,12 @@ This code is adapted from this [Digital Ocean tutorial](https://www.digitalocean
 [Digital Ocean Let's Encrypt for Nginx](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04)
 
 
+
 ### Quickstart
 Prereqs:
-- A ditalocean (or similar) droplet running some variation of Linux (I used ubuntu, but this will probably work on other distros)
+- A ditalocean (or similar) droplet running some variation of Linux (I used ubuntu 16.04 64 bit, but this will probably work on other distros)
 - A domain name
 - A DNS configured to point the domain name to the DO droplet
-
-#### Note: I just realized that this will not work for others without changing the db_setup.py and generate_config_files.py: there are some hardcoded username and domain name variables, you will have to replace these with yours. I will update this tonight to pull the username from the shell session. 
 
 SSH into the digital ocean server and run the following:
 
@@ -20,10 +19,13 @@ adduser [USERNAME] sudo
 su [USERNAME]
 cd
 git clone https://github.com/cirgue/flask_template.git
+cd flask_tempalte
 source setup.sh [domain name]
 ```
 
 After installation, you should be able to go to `http://[domain name]` in a browser and see the homepage. Currently, certbot is set up to only get a staging cert, which the browser shouldn't trust by default.
+
+
 
 ### To reset ssh keys on local:
 

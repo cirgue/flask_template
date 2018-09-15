@@ -1,7 +1,9 @@
 import sys
 import os
-# site_name = sys.argv[1]
-address = 'conttact.me'
+import getpass
+
+address = sys.argv[1]
+# address = 'conttact.me'
 
 nginx_conf_name = 'flask_app_nginx_conf'
 nginx_conf_contents = '''
@@ -29,7 +31,7 @@ Description=Gunicorn instance to serve flask_app
 After=network.target
 
 [Service]
-User=john
+User={username}
 Group=www-data
 WorkingDirectory={project_directory}
 Environment="PATH={project_directory}/flask_app_env/bin"
@@ -38,7 +40,7 @@ ExecStart={project_directory}/flask_app_env/bin/gunicorn --workers 3 --bind unix
 
 [Install]
 WantedBy=multi-user.target
-'''.format(**{'project_directory':os.getcwd()})
+'''.format(**{'project_directory':os.getcwd(), 'username'=getpass.getuser()})
 
 def write_config_files():
     print('writing nginx')
